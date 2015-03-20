@@ -1,0 +1,2 @@
+# plixir
+Poker + Elixir + Phoenix
