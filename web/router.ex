@@ -12,6 +12,10 @@ defmodule Plixir.Router do
     plug :accepts, ["json"]
   end
 
+  socket "/ws", Plixir do
+    channel "tables:*", TableChannel
+  end
+
   scope "/", Plixir do
     pipe_through :browser # Use the default browser stack
 

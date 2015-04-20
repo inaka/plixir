@@ -20,7 +20,11 @@ defmodule Plixir.TableController do
     changeset = Table.changeset(%Table{}, table_params)
 
     if changeset.valid? do
-      Repo.insert(changeset)
+      table = Repo.insert(changeset)
+
+      payload = %{id: table.id, name: table.name, type: table.type,
+        max_players: table.max_players, current_players: table.current_players}
+      Plixir.Endpoint.broadcast! "tables:lobby", "table_created", payload
 
       conn
       |> put_flash(:info, "Table created successfully.")

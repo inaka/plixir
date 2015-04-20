@@ -1,6 +1,6 @@
 <h2>Listing tables</h2>
 
-<table class="table">
+<table id="tables">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,7 +13,7 @@
   </thead>
   <tbody>
 <%= for table <- @tables do %>
-    <tr>
+    <tr id=<%= table.id %>>
       <td><%= table.name %></td>
       <td><%= table.type %></td>
       <td><%= table.max_players %></td>
