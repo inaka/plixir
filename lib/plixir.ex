@@ -8,8 +8,9 @@ defmodule Plixir do
 
     children = [
       # Start the endpoint when the application starts
-      worker(Plixir.Endpoint, []),
-
+      supervisor(Plixir.Endpoint, []),
+      # Start the Ecto repository
+      worker(Plixir.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(Plixir.Worker, [arg1, arg2, arg3]),
     ]
