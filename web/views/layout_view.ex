@@ -1,3 +1,3 @@
 defmodule Plixir.LayoutView do
-  use Plixir.View
+  use Plixir.Web, :view
 end

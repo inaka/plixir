@@ -1,5 +1,5 @@
 defmodule Plixir.PageController do
-  use Phoenix.Controller
+  use Plixir.Web, :controller
 
   plug :action
 
