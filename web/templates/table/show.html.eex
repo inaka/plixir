@@ -1,0 +1,27 @@
+<h2>Show table</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @table.name %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @table.type %>
+  </li>
+
+  <li>
+    <strong>MaxPlayers:</strong>
+    <%= @table.max_players %>
+  </li>
+
+  <li>
+    <strong>CurrentPlayers:</strong>
+    <%= @table.current_players %>
+  </li>
+
+</ul>
+
+<%= link "Back", to: table_path(@conn, :index) %>

@@ -1,0 +1,32 @@
+<h2>Listing tables</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>MaxPlayers</th>
+      <th>CurrentPlayers</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for table <- @tables do %>
+    <tr>
+      <td><%= table.name %></td>
+      <td><%= table.type %></td>
+      <td><%= table.max_players %></td>
+      <td><%= table.current_players %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: table_path(@conn, :show, table), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: table_path(@conn, :edit, table), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: table_path(@conn, :delete, table), method: :delete, class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New table", to: table_path(@conn, :new), class: "btn btn-primary" %>
