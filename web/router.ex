@@ -15,7 +15,9 @@ defmodule Plixir.Router do
   scope "/", Plixir do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", TableController, :index
+
+    resources "/tables", TableController
   end
 
   # Other scopes may use custom stacks.

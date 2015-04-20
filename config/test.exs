@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :plixir, Plixir.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "plixir",
+  password: "plixir",
   database: "plixir_test",
   size: 1,
   max_overflow: false
