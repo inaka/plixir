@@ -12,10 +12,10 @@ defmodule Plixir.Card do
     6
 
   """
-  def value("A" <> _) do 14 end
-  def value("K" <> _) do 13 end
-  def value("J" <> _) do 12 end
-  def value("Q" <> _) do 11 end
+  def value("A" <> _), do: 14
+  def value("K" <> _), do: 13
+  def value("J" <> _), do: 12
+  def value("Q" <> _), do: 11
   def value(card) do
     card
     |> String.first
